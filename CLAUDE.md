@@ -9,7 +9,7 @@ A lifting diary application built with Next.js 16, React 19, TypeScript 5, and T
 ## Commands
 
 ```bash
-npm run dev      # Start development server at localhost:3000
+npm run dev      # Start development server at localhost:3000 (uses Turbopack)
 npm run build    # Create production build
 npm start        # Run production server
 npm run lint     # Run ESLint
