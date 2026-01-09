@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(npm run dev:*)",
+      "Bash(npm install:*)",
+      "mcp__neon__list_shared_projects",
+      "mcp__neon__describe_table_schema"
+    ]
+  }
+}
