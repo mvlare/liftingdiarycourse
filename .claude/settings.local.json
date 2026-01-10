@@ -6,7 +6,9 @@
       "Bash(npm run dev:*)",
       "Bash(npm install:*)",
       "mcp__neon__list_shared_projects",
-      "mcp__neon__describe_table_schema"
+      "mcp__neon__describe_table_schema",
+      "Bash(dir /s \"C:\\\\Projects\\\\Claude\\\\liftingdiarycourse\\\\app\")",
+      "Bash(npm run build:*)"
     ]
   }
 }

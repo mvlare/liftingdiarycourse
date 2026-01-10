@@ -6,6 +6,10 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 A lifting diary application built with Next.js 16, React 19, TypeScript 5, and Tailwind CSS 4. Currently a fresh scaffold ready for feature development.
 
+## Documentation-First Development
+
+**All generated code MUST align with the documentation in the `/docs` directory.** Before writing any code, consult the relevant docs files to ensure consistency with established patterns, standards, and specifications.
+
 ## Commands
 
 ```bash
@@ -20,6 +24,11 @@ npm run lint     # Run ESLint
 - **Next.js App Router** - Uses `/app` directory with file-based routing
 - **React Server Components** - Server components by default
 - **Tailwind CSS** - Utility-first styling with dark mode support via media queries
+- **shadcn/ui** - UI component library (see `docs/ui.md` for standards)
+
+### UI Standards
+
+**ONLY use shadcn/ui components for all UI elements.** No custom components should be created. See `docs/ui.md` for complete guidelines.
 
 ### Key Files
 
