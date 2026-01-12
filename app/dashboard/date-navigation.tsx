@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { DatePicker } from "@/components/ui/date-picker";
 
@@ -10,6 +11,11 @@ interface DateNavigationProps {
 export function DateNavigation({ currentDate }: DateNavigationProps) {
   const router = useRouter();
   const searchParams = useSearchParams();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   function handleDateChange(date: Date | undefined) {
     if (!date) return;
@@ -22,6 +28,10 @@ export function DateNavigation({ currentDate }: DateNavigationProps) {
     const dateString = `${year}-${month}-${day}`;
     params.set("date", dateString);
     router.push(`/dashboard?${params.toString()}`);
+  }
+
+  if (!mounted) {
+    return null;
   }
 
   return <DatePicker date={currentDate} onDateChange={handleDateChange} />;
