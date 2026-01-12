@@ -30,6 +30,10 @@ npm run lint     # Run ESLint
 
 **ONLY use shadcn/ui components for all UI elements.** No custom components should be created. See `docs/ui.md` for complete guidelines.
 
+### Data Fetching Standards
+
+**ALL data fetching MUST be done via Server Components.** Database queries must use Drizzle ORM through helper functions in the `/data` directory. Users can ONLY access their own data. See `docs/data-fetching.md` for complete guidelines.
+
 ### Key Files
 
 - `app/layout.tsx` - Root layout with metadata, fonts (Geist), and global CSS
