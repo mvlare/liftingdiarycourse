@@ -25,6 +25,11 @@ npm run lint     # Run ESLint
 - **React Server Components** - Server components by default
 - **Tailwind CSS** - Utility-first styling with dark mode support via media queries
 - **shadcn/ui** - UI component library (see `docs/ui.md` for standards)
+- **Clerk** - Authentication provider (see `docs/auth.md` for standards)
+
+### Authentication Standards
+
+**ALL authentication MUST use Clerk.** No custom authentication logic should be implemented. Use `auth()` from `@clerk/nextjs/server` to get the current user's ID in Server Components. See `docs/auth.md` for complete guidelines.
 
 ### UI Standards
 
@@ -33,6 +38,10 @@ npm run lint     # Run ESLint
 ### Data Fetching Standards
 
 **ALL data fetching MUST be done via Server Components.** Database queries must use Drizzle ORM through helper functions in the `/data` directory. Users can ONLY access their own data. See `docs/data-fetching.md` for complete guidelines.
+
+### Data Mutation Standards
+
+**ALL data mutations MUST be done via Server Actions.** Server actions must be in colocated `actions.ts` files, use typed parameters (no FormData), and validate all arguments with Zod. Database mutations must use Drizzle ORM through helper functions in the `/data` directory. See `docs/data-mutations.md` for complete guidelines.
 
 ### Key Files
 
