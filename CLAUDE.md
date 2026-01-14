@@ -27,6 +27,10 @@ npm run lint     # Run ESLint
 - **shadcn/ui** - UI component library (see `docs/ui.md` for standards)
 - **Clerk** - Authentication provider (see `docs/auth.md` for standards)
 
+### Routing Standards
+
+**ALL application routes MUST be accessed through `/dashboard`.** The `/dashboard` page and all sub-pages are protected routes, accessible only to logged-in users. Route protection is handled through Next.js middleware using Clerk. See `docs/routing.md` for complete guidelines.
+
 ### Authentication Standards
 
 **ALL authentication MUST use Clerk.** No custom authentication logic should be implemented. Use `auth()` from `@clerk/nextjs/server` to get the current user's ID in Server Components. See `docs/auth.md` for complete guidelines.
@@ -42,6 +46,10 @@ npm run lint     # Run ESLint
 ### Data Mutation Standards
 
 **ALL data mutations MUST be done via Server Actions.** Server actions must be in colocated `actions.ts` files, use typed parameters (no FormData), and validate all arguments with Zod. Database mutations must use Drizzle ORM through helper functions in the `/data` directory. See `docs/data-mutations.md` for complete guidelines.
+
+### Server Component Standards
+
+**In Next.js 15+, `params` and `searchParams` are Promises and MUST be awaited.** Always use `async` page components and `await params` before accessing route parameters. See `docs/server-components.md` for complete guidelines.
 
 ### Key Files
 

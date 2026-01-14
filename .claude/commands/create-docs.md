@@ -1,0 +1,1 @@
+create a new doc file at /docs/$1.md which also needs to be highlight $2 in the coding standards of claude.md
